@@ -35,7 +35,7 @@ git clone git@github.com:Servora-Kit/servora-web.git
 pnpm install
 ```
 
-Business repos (e.g. `servora-iam`) reference `@servora/web-pkg` via npm version range (`^0.0.1`). In the local workspace, `linkWorkspacePackages: true` automatically symlinks to the source — equivalent to Go's `go.work` replace directive.
+In the kit workspace, pnpm links the local `servora-web/packages/pkg` (current version in its `package.json`). On npm, install with `^0.0.2` after tag `pkg/v0.0.2` is published; until then the latest public release may still be `0.0.1`. In the local workspace, `linkWorkspacePackages: true` automatically symlinks to the source — equivalent to Go's `go.work` replace directive.
 
 ## License
 

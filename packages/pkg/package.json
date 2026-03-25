@@ -1,6 +1,6 @@
 {
   "name": "@servora/web-pkg",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shared frontend utilities for Servora web apps (request handler, token management, Kratos error parsing)",
   "type": "module",
   "exports": {
