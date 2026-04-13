@@ -1,0 +1,37 @@
+{
+    "name": "@servora/proto-utils",
+    "version": "0.0.1",
+    "description": "Proto/Kratos API 查询工具：filter 序列化、order_by 编码、FieldMask 生成",
+    "type": "module",
+    "exports": {
+        "./query": {
+            "types": "./dist/query.d.ts",
+            "import": "./dist/query.js"
+        }
+    },
+    "files": [
+        "dist",
+        "src",
+        "!src/**/*_test.ts"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run clean && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Servora-Kit/servora-web.git",
+        "directory": "packages/proto-utils"
+    },
+    "homepage": "https://github.com/Servora-Kit/servora-web/tree/main/packages/proto-utils",
+    "bugs": {
+        "url": "https://github.com/Servora-Kit/servora-web/issues"
+    },
+    "license": "MIT",
+    "sideEffects": false,
+    "devDependencies": {
+        "typescript": "^5.7.2"
+    }
+}
