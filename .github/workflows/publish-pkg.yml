@@ -3,7 +3,7 @@ name: Publish @servora/client
 on:
   push:
     tags:
-      - "pkg/v*"
+      - "client/v*"
 
 jobs:
   publish:

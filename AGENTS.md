@@ -37,7 +37,7 @@ cd packages/client
 # 1. 修改代码 → 提交
 # 2. 更新 package.json 中的 version
 # 3. 打 tag（格式 pkg/v<version>）
-git tag pkg/v0.0.3
+git tag client/v0.0.3
 git push origin main --tags
 # GitHub Actions 自动构建并 npm publish --provenance
 ```
