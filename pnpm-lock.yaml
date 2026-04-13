@@ -8,7 +8,7 @@ importers:
 
   .: {}
 
-  packages/pkg:
+  packages/client:
     dependencies:
       ofetch:
         specifier: ^1.5.1
