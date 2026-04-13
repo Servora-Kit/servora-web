@@ -10,13 +10,13 @@
 
 | 包 | 路径 | 说明 |
 |---|------|------|
-| `@servora/web-pkg` | `packages/pkg/` | 通用 HTTP 请求处理器、Token 管理、Kratos 错误解析 |
+| `@servora/client` | `packages/client/` | 通用 HTTP 请求处理器、Token 管理、Kratos 错误解析 |
 
 ## 开发约束
 
 ### 提交规范
 
-格式：`type(scope): description`。type：`feat`/`fix`/`refactor`/`docs`/`test`/`chore`。scope 建议：`pkg`、`repo`。
+格式：`type(scope): description`。type：`feat`/`fix`/`refactor`/`docs`/`test`/`chore`。scope 建议：`client`、`repo`。
 
 ### 包设计原则
 
@@ -26,23 +26,23 @@
 
 ### 与业务仓库的关系
 
-- 业务仓库通过 `@servora/web-pkg` 依赖本仓库
+- 业务仓库通过 `@servora/client` 依赖本仓库
 - 本地开发：顶层 `pnpm-workspace.yaml`（在 `servora-kit/`）联调，`workspace:*` 自动 link 本地源码
 - CI/生产：通过 npm 公共 registry 安装（`npm publish --provenance`）
 
 ### 发布流程
 
 ```bash
-cd packages/pkg
+cd packages/client
 # 1. 修改代码 → 提交
 # 2. 更新 package.json 中的 version
 # 3. 打 tag（格式 pkg/v<version>）
-git tag pkg/v0.0.2
+git tag pkg/v0.0.3
 git push origin main --tags
 # GitHub Actions 自动构建并 npm publish --provenance
 ```
 
-业务仓库更新：将 `"@servora/web-pkg": "workspace:*"` 改为 `"@servora/web-pkg": "^0.0.2"`（CI 独立构建时需要），本地开发仍通过 workspace link 使用本地源码。
+业务仓库更新：将 `"@servora/client": "workspace:*"` 改为 `"@servora/client": "^0.0.3"`（CI 独立构建时需要），本地开发仍通过 workspace link 使用本地源码。
 
 ## 目录结构
 
@@ -52,7 +52,7 @@ servora-web/
 │   └── workflows/
 │       └── publish-pkg.yml # tag pkg/v* 触发自动发布到 npm
 ├── packages/
-│   └── pkg/                # @servora/web-pkg
+│   └── client/             # @servora/client
 │       ├── src/
 │       │   ├── request.ts  # createRequestHandler, ApiError, TokenStore
 │       │   └── errors.ts   # parseKratosError, isKratosReason, kratosMessage
@@ -64,7 +64,7 @@ servora-web/
 └── package.json
 ```
 
-## packages/pkg 修改约定
+## packages/client 修改约定
 
 - 优先把这里当作 **proto client 适配层**，而不是业务逻辑目录
 - 新增能力前先判断它是否能被多个前端应用复用

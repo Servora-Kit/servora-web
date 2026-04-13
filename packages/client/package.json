@@ -1,5 +1,5 @@
 {
-  "name": "@servora/web-pkg",
+  "name": "@servora/client",
   "version": "0.0.2",
   "description": "Shared frontend utilities for Servora web apps (request handler, token management, Kratos error parsing)",
   "type": "module",
@@ -27,9 +27,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Servora-Kit/servora-web.git",
-    "directory": "packages/pkg"
+    "directory": "packages/client"
   },
-  "homepage": "https://github.com/Servora-Kit/servora-web/tree/main/packages/pkg",
+  "homepage": "https://github.com/Servora-Kit/servora-web/tree/main/packages/client",
   "bugs": {
     "url": "https://github.com/Servora-Kit/servora-web/issues"
   },

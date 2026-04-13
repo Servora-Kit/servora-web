@@ -1,4 +1,4 @@
-name: Publish @servora/web-pkg
+name: Publish @servora/client
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       id-token: write
     defaults:
       run:
-        working-directory: packages/pkg
+        working-directory: packages/client
     steps:
       - uses: actions/checkout@v4
 

@@ -6,21 +6,21 @@ Shared frontend libraries for [Servora-Kit](https://github.com/Servora-Kit) web 
 
 | Package | npm | Description |
 |---------|-----|-------------|
-| [`@servora/web-pkg`](./packages/pkg/) | [![npm](https://img.shields.io/npm/v/@servora/web-pkg)](https://www.npmjs.com/package/@servora/web-pkg) | HTTP request handler, token management, Kratos error parsing |
+| [`@servora/client`](./packages/client/) | [![npm](https://img.shields.io/npm/v/@servora/client)](https://www.npmjs.com/package/@servora/client) | HTTP request handler, token management, Kratos error parsing |
 
 ## Installation
 
 ```bash
-npm install @servora/web-pkg
+npm install @servora/client
 # or
-pnpm add @servora/web-pkg
+pnpm add @servora/client
 ```
 
 ## Usage
 
 ```typescript
-import { createRequestHandler } from '@servora/web-pkg/request'
-import { parseKratosError, kratosMessage } from '@servora/web-pkg/errors'
+import { createRequestHandler } from '@servora/client/request'
+import { parseKratosError, kratosMessage } from '@servora/client/errors'
 ```
 
 ## Local Development
@@ -35,7 +35,7 @@ git clone git@github.com:Servora-Kit/servora-web.git
 pnpm install
 ```
 
-In the kit workspace, pnpm links the local `servora-web/packages/pkg` (current version in its `package.json`). On npm, install with `^0.0.2` after tag `pkg/v0.0.2` is published; until then the latest public release may still be `0.0.1`. In the local workspace, `linkWorkspacePackages: true` automatically symlinks to the source — equivalent to Go's `go.work` replace directive.
+In the kit workspace, pnpm links the local `servora-web/packages/client` (current version in its `package.json`). On npm, install with `^0.0.2` after tag `pkg/v0.0.2` is published; until then the latest public release may still be `0.0.1`. In the local workspace, `linkWorkspacePackages: true` automatically symlinks to the source — equivalent to Go's `go.work` replace directive.
 
 ## License
 

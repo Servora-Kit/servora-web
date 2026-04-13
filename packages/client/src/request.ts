@@ -1,5 +1,5 @@
 /**
- * @servora/web-pkg — 通用 HTTP 请求处理器
+ * @servora/client — 通用 HTTP 请求处理器
  *
  * 为 proto 生成的 TypeScript client 提供标准 RequestHandler 实现，包含：
  * - Bearer token 自动注入
