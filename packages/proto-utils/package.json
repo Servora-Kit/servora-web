@@ -1,6 +1,6 @@
 {
     "name": "@servora/proto-utils",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Proto/Kratos API 查询工具：filter 序列化、order_by 编码、FieldMask 生成",
     "type": "module",
     "exports": {

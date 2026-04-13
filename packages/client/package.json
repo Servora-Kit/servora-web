@@ -1,44 +1,44 @@
 {
-  "name": "@servora/client",
-  "version": "0.0.2",
-  "description": "Shared frontend utilities for Servora web apps (request handler, token management, Kratos error parsing)",
-  "type": "module",
-  "exports": {
-    "./request": {
-      "types": "./dist/request.d.ts",
-      "import": "./dist/request.js"
+    "name": "@servora/client",
+    "version": "0.0.3",
+    "description": "Shared frontend utilities for Servora web apps (request handler, token management, Kratos error parsing)",
+    "type": "module",
+    "exports": {
+        "./request": {
+            "types": "./dist/request.d.ts",
+            "import": "./dist/request.js"
+        },
+        "./errors": {
+            "types": "./dist/errors.d.ts",
+            "import": "./dist/errors.js"
+        }
     },
-    "./errors": {
-      "types": "./dist/errors.d.ts",
-      "import": "./dist/errors.js"
+    "files": [
+        "dist",
+        "src",
+        "!src/**/*_test.ts"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "clean": "rm -rf dist",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run clean && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Servora-Kit/servora-web.git",
+        "directory": "packages/client"
+    },
+    "homepage": "https://github.com/Servora-Kit/servora-web/tree/main/packages/client",
+    "bugs": {
+        "url": "https://github.com/Servora-Kit/servora-web/issues"
+    },
+    "license": "MIT",
+    "sideEffects": false,
+    "dependencies": {
+        "ofetch": "^1.5.1"
+    },
+    "devDependencies": {
+        "typescript": "^5.7.2"
     }
-  },
-  "files": [
-    "dist",
-    "src",
-    "!src/**/*_test.ts"
-  ],
-  "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "clean": "rm -rf dist",
-    "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run clean && npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Servora-Kit/servora-web.git",
-    "directory": "packages/client"
-  },
-  "homepage": "https://github.com/Servora-Kit/servora-web/tree/main/packages/client",
-  "bugs": {
-    "url": "https://github.com/Servora-Kit/servora-web/issues"
-  },
-  "license": "MIT",
-  "sideEffects": false,
-  "dependencies": {
-    "ofetch": "^1.5.1"
-  },
-  "devDependencies": {
-    "typescript": "^5.7.2"
-  }
 }
