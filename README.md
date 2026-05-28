@@ -7,13 +7,13 @@ Shared frontend libraries for [Servora-Kit](https://github.com/Servora-Kit) web 
 | Package | npm | Description |
 |---------|-----|-------------|
 | [`@servora/client`](./packages/client/) | [![npm](https://img.shields.io/npm/v/@servora/client)](https://www.npmjs.com/package/@servora/client) | HTTP request handler, token management, Kratos error parsing |
+| [`@servora/proto-utils`](./packages/proto-utils/) | [![npm](https://img.shields.io/npm/v/@servora/proto-utils)](https://www.npmjs.com/package/@servora/proto-utils) | Proto/Kratos API query utilities: filter, order_by, FieldMask |
 
 ## Installation
 
 ```bash
-npm install @servora/client
-# or
 pnpm add @servora/client
+pnpm add @servora/proto-utils
 ```
 
 ## Usage
@@ -21,6 +21,7 @@ pnpm add @servora/client
 ```typescript
 import { createRequestHandler } from '@servora/client/request'
 import { parseKratosError, kratosMessage } from '@servora/client/errors'
+import { makeFilter, makeOrderBy, makeUpdateMask } from '@servora/proto-utils/query'
 ```
 
 ## Local Development

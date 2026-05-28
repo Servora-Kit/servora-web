@@ -13,9 +13,9 @@
 function omitEmpty(obj: Record<string, unknown>): Record<string, unknown> {
   return Object.fromEntries(
     Object.entries(obj).filter(
-      ([, v]) => v !== null && v !== undefined && v !== '',
+      ([, v]) => v !== null && v !== undefined && v !== "",
     ),
-  )
+  );
 }
 
 /**
@@ -35,10 +35,10 @@ function omitEmpty(obj: Record<string, unknown>): Record<string, unknown> {
 export function makeFilter(
   fields?: null | Record<string, unknown>,
 ): string | undefined {
-  if (fields == null) return undefined
-  const cleaned = omitEmpty(fields)
-  if (Object.keys(cleaned).length === 0) return undefined
-  return JSON.stringify(cleaned)
+  if (fields == null) return undefined;
+  const cleaned = omitEmpty(fields);
+  if (Object.keys(cleaned).length === 0) return undefined;
+  return JSON.stringify(cleaned);
 }
 
 /**
@@ -55,10 +55,12 @@ export function makeFilter(
  * makeOrderBy()
  * // → '["-created_at"]'
  */
+export const DEFAULT_ORDER_BY = ["-created_at"];
+
 export function makeOrderBy(fields?: null | string[]): string | undefined {
-  const resolved = fields ?? ['-created_at']
-  if (resolved.length === 0) return undefined
-  return JSON.stringify(resolved)
+  if (fields == null) return undefined;
+  if (fields.length === 0) return undefined;
+  return JSON.stringify(fields);
 }
 
 /**
@@ -76,6 +78,6 @@ export function makeOrderBy(fields?: null | string[]): string | undefined {
  * // → 'name,avatar,id'  （id 不重复出现）
  */
 export function makeUpdateMask(fields: string[]): string {
-  const without = fields.filter((f) => f !== 'id')
-  return [...without, 'id'].join(',')
+  const unique = [...new Set(fields.filter((f) => f !== "id"))];
+  return [...unique, "id"].join(",");
 }
