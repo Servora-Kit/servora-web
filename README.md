@@ -6,21 +6,19 @@ Shared frontend libraries for [Servora-Kit](https://github.com/Servora-Kit) web 
 
 | Package | npm | Description |
 |---------|-----|-------------|
-| [`@servora/client`](./packages/client/) | [![npm](https://img.shields.io/npm/v/@servora/client)](https://www.npmjs.com/package/@servora/client) | HTTP request handler, token management, Kratos error parsing |
-| [`@servora/proto-utils`](./packages/proto-utils/) | [![npm](https://img.shields.io/npm/v/@servora/proto-utils)](https://www.npmjs.com/package/@servora/proto-utils) | Proto/Kratos API query utilities: filter, order_by, FieldMask |
+| [`@servora/proto-utils`](./packages/proto-utils/) | [![npm](https://img.shields.io/npm/v/@servora/proto-utils)](https://www.npmjs.com/package/@servora/proto-utils) | Proto/Kratos API utilities: query builders, FieldMask, HTTP client, Kratos errors |
 
 ## Installation
 
 ```bash
-pnpm add @servora/client
 pnpm add @servora/proto-utils
 ```
 
 ## Usage
 
 ```typescript
-import { createRequestHandler } from '@servora/client/request'
-import { parseKratosError, kratosMessage } from '@servora/client/errors'
+import { createRequestHandler } from '@servora/proto-utils/client/request'
+import { parseKratosError, kratosMessage } from '@servora/proto-utils/client/errors'
 import { makeFilter, makeOrderBy, makeUpdateMask } from '@servora/proto-utils/query'
 ```
 
@@ -36,7 +34,7 @@ git clone git@github.com:Servora-Kit/servora-web.git
 pnpm install
 ```
 
-In the kit workspace, pnpm links the local `servora-web/packages/client` (current version in its `package.json`). On npm, install with `^0.0.2` after tag `pkg/v0.0.2` is published; until then the latest public release may still be `0.0.1`. In the local workspace, `linkWorkspacePackages: true` automatically symlinks to the source — equivalent to Go's `go.work` replace directive.
+In the kit workspace, pnpm links the local `servora-web/packages/proto-utils` package. On npm, install `@servora/proto-utils`; the `client`, `query`, and future CRUD/React/Vue helpers are exposed as subpath exports. In the local workspace, `linkWorkspacePackages: true` automatically symlinks to the source — equivalent to Go's `go.work` replace directive.
 
 ## License
 

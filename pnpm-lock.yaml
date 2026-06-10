@@ -12,17 +12,11 @@ importers:
         specifier: ^2.4.15
         version: 2.4.15
 
-  packages/client:
+  packages/proto-utils:
     dependencies:
       ofetch:
         specifier: ^1.5.1
         version: 1.5.1
-    devDependencies:
-      typescript:
-        specifier: ^5.7.2
-        version: 5.9.3
-
-  packages/proto-utils:
     devDependencies:
       typescript:
         specifier: ^5.7.2

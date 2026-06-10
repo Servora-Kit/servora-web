@@ -1,5 +1,5 @@
 /**
- * @servora/client — 通用 HTTP 请求处理器
+ * @servora/proto-utils/client — 通用 HTTP 请求处理器
  *
  * 为 proto 生成的 TypeScript client 提供标准 RequestHandler 实现，包含：
  * - Bearer token 自动注入
@@ -7,7 +7,7 @@
  * - 结构化 ApiError（区分 http / network / timeout）
  * - 全局 onError 回调（延迟到宏任务，避免与 toast.promise 竞态）
  *
- * 消费方需自行安装 peer dependency: ofetch
+ * 消费方通过 @servora/proto-utils 使用本实现，ofetch 由本包依赖提供。
  */
 
 import type { FetchOptions } from "ofetch";
